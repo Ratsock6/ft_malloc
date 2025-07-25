@@ -3,6 +3,13 @@
 
 # include <stddef.h>
 
+# define TINY_LIMIT 128
+# define SMALL_LIMIT 1024
+
+# define TINY_ZONE_SIZE (getpagesize() * 16)
+# define SMALL_ZONE_SIZE (getpagesize() * 128)
+
+
 typedef enum e_zone_type {
     TINY,
     SMALL,
