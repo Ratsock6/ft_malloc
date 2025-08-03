@@ -6,6 +6,15 @@
 #define TINY_ZONE_SIZE (getpagesize() * 16)
 #define SMALL_ZONE_SIZE (getpagesize() * 128)
 
+// Fonction de test
+void print_malloc_call(size_t size) {
+    char buf[64];
+    int len = 0;
+
+    len = snprintf(buf, sizeof(buf), "malloc called with size: %zu\n", size);
+    write(1, buf, len);
+}
+
 void *malloc(size_t size) {
     size = align8(size);
     if (size == 0)

@@ -1,5 +1,7 @@
 #include "malloc.h"
 
+t_memory g_memory = {NULL, NULL, NULL};
+
 t_zone *create_zone(t_zone_type type, size_t zone_size) 
 {
     t_zone *zone = mmap(NULL, zone_size, PROT_READ | PROT_WRITE,
