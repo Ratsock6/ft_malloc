@@ -4,7 +4,7 @@
 
 void *realloc(void *ptr, size_t size) {
     if (!ptr)
-        return ft_malloc(size);
+        return malloc(size);
 
     if (size == 0)
     {

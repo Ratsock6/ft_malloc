@@ -2,6 +2,10 @@
 # define FT_MALLOC_H
 
 # include <stddef.h>
+# include <unistd.h>
+# include <sys/mman.h>
+# include <string.h>
+# include <stdio.h>
 
 # define TINY_LIMIT 128
 # define SMALL_LIMIT 1024
@@ -37,5 +41,20 @@ typedef struct s_memory {
 }   t_memory;
 
 extern t_memory g_memory;
+
+// Memory Zone
+t_zone  *create_zone(t_zone_type type, size_t zone_size);
+t_zone  **get_zone_list(size_t size);
+size_t  get_zone_size(size_t size);
+t_block *find_free_block(t_zone *zone, size_t size);
+void    append_zone(t_zone **zone_list, t_zone *new_zone);
+
+// Utils
+size_t  align8(size_t size);
+
+// Fonction
+void    free(void *ptr);
+void    *malloc(size_t size);
+void    show_alloc_mem(void);
 
 #endif
