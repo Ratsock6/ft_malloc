@@ -6,13 +6,14 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:50:22 by aallou-v          #+#    #+#             */
-/*   Updated: 2025/08/04 14:27:14 by aallou-v         ###   ########.fr       */
+/*   Updated: 2025/08/07 14:35:36 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "malloc.h"
 
 t_memory	g_memory = {NULL, NULL, NULL};
+
 
 t_zone	*create_zone(t_zone_type type, size_t zone_size)
 {
@@ -48,9 +49,9 @@ t_zone	**get_zone_list(size_t size)
 size_t	get_zone_size(size_t size)
 {
 	if (size <= TINY_LIMIT)
-		return (getpagesize() * 16);
+		return (size + sizeof(t_zone) + sizeof(t_block));
 	if (size <= SMALL_LIMIT)
-		return (getpagesize() * 128);
+		return (size + sizeof(t_zone) + sizeof(t_block));
 	return (size + sizeof(t_zone) + sizeof(t_block));
 }
 

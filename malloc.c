@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:50:17 by aallou-v          #+#    #+#             */
-/*   Updated: 2025/08/04 14:26:27 by aallou-v         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:33:16 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,6 @@
 
 #define TINY_LIMIT 128
 #define SMALL_LIMIT 1024
-
-// Fonction de test
-void	print_malloc_call(size_t size)
-{
-	char	buf[64];
-	int		len;
-
-	len = 0;
-	len = snprintf(buf, sizeof(buf), "malloc called with size: %zu\n", size);
-	write(1, buf, len);
-}
 
 void	*malloc(size_t size)
 {

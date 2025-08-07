@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:50:35 by aallou-v          #+#    #+#             */
-/*   Updated: 2025/08/04 14:31:05 by aallou-v         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:42:49 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void		append_zone(t_zone **zone_list, t_zone *new_zone);
 
 // Utils
 size_t		align8(size_t size);
+void		print_malloc_call(size_t size, int diff);
 
 // Fonction
 void		free(void *ptr);

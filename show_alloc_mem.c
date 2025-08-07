@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:50:26 by aallou-v          #+#    #+#             */
-/*   Updated: 2025/08/04 14:48:33 by aallou-v         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:23:57 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	print_show_zone_list(t_norm *norm)
 	print_address(norm->start);
 	write(1, " - ", 3);
 	print_address(norm->end);
-	printf(" : %zu octets\n", norm->block->size);
+	printf(" : %zu bytes\n", norm->block->size);
 }
 
 static void	show_zone_list(t_zone *zone)
